@@ -1,7 +1,8 @@
 import streamlit as st
-from openai import OpenAI
+from google import genai
 
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+# 🔑 Use Google API key 
+client = genai.Client(api_key=st.secrets["GOOGLE_API_KEY"])
 
 st.set_page_config(page_title="AI Chatbot", page_icon="🤖")
 
@@ -9,40 +10,54 @@ st.set_page_config(page_title="AI Chatbot", page_icon="🤖")
 with st.sidebar:
     st.title("AI Chatbot")
     st.write("Customer Support Bot")
+
     if st.button("Clear Chat"):
         st.session_state.messages = []
 
-# Chat memory
+# Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
 st.title("💬 Chatbot")
 
-# show history
+# Show chat history
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-# input
+# User input
 user_input = st.chat_input("Type here...")
 
 if user_input:
+    # Save user message
     st.session_state.messages.append({"role": "user", "content": user_input})
 
     with st.chat_message("user"):
         st.markdown(user_input)
 
+    # Build conversation prompt for Gemini
+    history = "\n".join(
+        [f"{m['role']}: {m['content']}" for m in st.session_state.messages]
+    )
+
+    prompt = f"""
+You are a helpful assistant.
+
+Conversation so far:
+{history}
+
+Assistant:
+"""
+
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
-            response = client.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=[
-                    {"role": "system", "content": "You are a helpful assistant"},
-                    *st.session_state.messages
-                ]
+            response = client.models.generate_content(
+                model="gemini-2.5-flash",
+                contents=prompt
             )
 
-            reply = response.choices[0].message.content
+            reply = response.text
             st.markdown(reply)
 
+    # Save assistant response
     st.session_state.messages.append({"role": "assistant", "content": reply})
