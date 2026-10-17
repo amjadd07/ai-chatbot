@@ -161,7 +161,6 @@ if page == "Overview":
 
 # ---------------------------------------------------------
 # AI ASSISTANT
-# ---------------------------------------------------------
 elif page == "AI Assistant":
     st.markdown('<div class="eyebrow">AI SUPPORT</div>', unsafe_allow_html=True)
     st.markdown('<div class="page-title">PARKONIC AI Assistant</div>', unsafe_allow_html=True)
