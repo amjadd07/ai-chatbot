@@ -1,0 +1,174 @@
+/* PARKONIC AI ASSISTANT styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    :root {
+        --navy: #10243A;
+        --navy-2: #183650;
+        --teal: #00A6A6;
+        --teal-soft: #E6F7F6;
+        --ink: #172B3A;
+        --muted: #6B7C8F;
+        --line: #E4EAF0;
+        --surface: #FFFFFF;
+        --page: #F4F7FA;
+    }
+
+    html, body, [class*="css"] {
+        font-family: 'Inter', sans-serif;
+    }
+    .stApp {
+        background: var(--page);
+        color: var(--ink);
+    }
+    [data-testid="stHeader"] {
+        background: rgba(244,247,250,0.92);
+    }
+    .block-container {
+        max-width: 1450px;
+        padding-top: 1.5rem;
+        padding-bottom: 2.5rem;
+    }
+    [data-testid="stSidebar"] {
+        background: var(--navy);
+        border-right: 1px solid #203A51;
+    }
+    [data-testid="stSidebar"] * {
+        color: #F3F7FB;
+    }
+    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p {
+        color: #D3DEE8;
+    }
+    .brand-wrap {
+        padding: 8px 0 22px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+        margin-bottom: 22px;
+    }
+    .brand-mark {
+        display: inline-flex;
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        align-items: center;
+        justify-content: center;
+        background: var(--teal);
+        color: white;
+        font-weight: 800;
+        font-size: 22px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    .brand-name {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 19px;
+        font-weight: 800;
+        letter-spacing: 1.1px;
+        color: white;
+    }
+    .brand-caption {
+        margin: 10px 0 0 2px;
+        font-size: 11px;
+        letter-spacing: 1.4px;
+        color: #AFC2D2;
+        text-transform: uppercase;
+    }
+    .eyebrow {
+        color: var(--teal);
+        font-weight: 700;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.6px;
+        margin-bottom: 7px;
+    }
+    .page-title {
+        color: var(--navy);
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 1.2;
+        margin: 0 0 6px 0;
+    }
+    .page-subtitle {
+        color: var(--muted);
+        font-size: 14px;
+        margin-bottom: 22px;
+    }
+    .demo-banner {
+        background: #FFF7E6;
+        border: 1px solid #F2D38B;
+        color: #775719;
+        padding: 11px 14px;
+        border-radius: 10px;
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+    .metric-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        padding: 18px 18px 16px 18px;
+        min-height: 124px;
+        box-shadow: 0 3px 12px rgba(16,36,58,0.035);
+    }
+    .metric-label {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+    .metric-value {
+        color: var(--navy);
+        font-size: 29px;
+        font-weight: 800;
+        line-height: 1.1;
+    }
+    .metric-foot {
+        color: #738598;
+        font-size: 11px;
+        margin-top: 9px;
+    }
+    .section-heading {
+        color: var(--navy);
+        font-size: 17px;
+        font-weight: 750;
+        margin: 4px 0 12px 0;
+    }
+    .panel {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        padding: 18px;
+        box-shadow: 0 3px 12px rgba(16,36,58,0.025);
+    }
+    .status-pill {
+        display: inline-block;
+        border-radius: 999px;
+        padding: 4px 9px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+    .stButton > button {
+        border-radius: 9px;
+        font-weight: 650;
+        min-height: 40px;
+        border: 1px solid #D9E3EB;
+    }
+    .stButton > button[kind="primary"] {
+        background: var(--teal);
+        border-color: var(--teal);
+        color: white;
+    }
+    .stButton > button[kind="primary"]:hover {
+        background: #008D91;
+        border-color: #008D91;
+    }
+    div[data-testid="stChatMessage"] {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 12px 15px;
+    }
+    .stTextInput input, .stSelectbox div[data-baseweb="select"], .stDateInput input {
+        border-radius: 9px;
+    }
+
+    footer {visibility: hidden;}
