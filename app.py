@@ -3,7 +3,7 @@ from datetime import date, timedelta
 
 import pandas as pd
 import streamlit as st
-import google.generativeai as genai
+from google import genai
 
 # ---------------------------------------------------------
 # PAGE CONFIG
@@ -22,15 +22,15 @@ try:
     api_key = st.secrets.get("GOOGLE_API_KEY")
 except Exception:
     api_key = None
+
 api_key = api_key or os.getenv("GOOGLE_API_KEY")
 
 model = None
 if api_key:
     try:
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel("gemini-2.5-flash")
-    except Exception:
-        model = None
+        model = genai.Client(api_key=api_key)
+    except Exception as exc:
+        st.warning(f"Gemini setup failed: {exc}")
 
 # ---------------------------------------------------------
 # ---------------------------------------------------------
@@ -224,7 +224,10 @@ Conversation:
 Assistant:
 """
                     try:
-                        response = model.generate_content(prompt)
+                        response = model.models.generate_content(
+                        model="gemini-2.5-flash",
+                        contents=prompt
+                        )
                         reply = response.text or "I couldn't generate a response. Please try again."
                     except Exception as exc:
                         reply = f"Gemini request failed: {exc}"
