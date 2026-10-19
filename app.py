@@ -46,17 +46,17 @@ except FileNotFoundError:
 today = date.today()
 demo_data = [
     {"Trip ID": "DEMO-1001", "Site": "WAFI MALL", "Review Category": "Plate review", "Status": "Approved", "Review Time (min)": 3, "Created": today - timedelta(days=0), "Priority": "Normal"},
-    {"Trip ID": "DEMO-1002", "Site": "GLOBAL VILLAGE", "Review Category": "Wrong plate", "Status": "Pending", "Review Time (min)": 14, "Created": today - timedelta(days=0), "Priority": "High"},
-    {"Trip ID": "DEMO-1003", "Site": "JVC", "Review Category": "Large amount", "Status": "Flagged", "Review Time (min)": 21, "Created": today - timedelta(days=0), "Priority": "High"},
-    {"Trip ID": "DEMO-1004", "Site": "WAFI MALL", "Review Category": "Validation attempt", "Status": "Approved", "Review Time (min)": 4, "Created": today - timedelta(days=1), "Priority": "Normal"},
-    {"Trip ID": "DEMO-1005", "Site": "WTC", "Review Category": "Location tenancy", "Status": "Pending", "Review Time (min)": 17, "Created": today - timedelta(days=1), "Priority": "Medium"},
-    {"Trip ID": "DEMO-1006", "Site": "JVC", "Review Category": "Non-UAE plate", "Status": "Approved", "Review Time (min)": 5, "Created": today - timedelta(days=1), "Priority": "Normal"},
+    {"Trip ID": "DEMO-1002", "Site": "GLOBAL VILLAGE", "Review Category": "Wrong plate", "Status": "Pending", "Review Time (min)": 3, "Created": today - timedelta(days=0), "Priority": "High"},
+    {"Trip ID": "DEMO-1003", "Site": "JVC", "Review Category": "Large amount", "Status": "Flagged", "Review Time (min)": 2, "Created": today - timedelta(days=0), "Priority": "High"},
+    {"Trip ID": "DEMO-1004", "Site": "WAFI MALL", "Review Category": "Validation attempt", "Status": "Approved", "Review Time (min)": 3, "Created": today - timedelta(days=1), "Priority": "Normal"},
+    {"Trip ID": "DEMO-1005", "Site": "WTC", "Review Category": "Location tenancy", "Status": "Pending", "Review Time (min)": 1, "Created": today - timedelta(days=1), "Priority": "Medium"},
+    {"Trip ID": "DEMO-1006", "Site": "JVC", "Review Category": "Non-UAE plate", "Status": "Approved", "Review Time (min)": 2, "Created": today - timedelta(days=1), "Priority": "Normal"},
     {"Trip ID": "DEMO-1007", "Site": "GLOBAL VILLAGE", "Review Category": "Plate review", "Status": "Approved", "Review Time (min)": 2, "Created": today - timedelta(days=2), "Priority": "Normal"},
-    {"Trip ID": "DEMO-1008", "Site": "WTC", "Review Category": "Wrong plate", "Status": "Pending", "Review Time (min)": 19, "Created": today - timedelta(days=2), "Priority": "High"},
-    {"Trip ID": "DEMO-1009", "Site": "JVC", "Review Category": "Large amount", "Status": "Flagged", "Review Time (min)": 25, "Created": today - timedelta(days=3), "Priority": "High"},
-    {"Trip ID": "DEMO-1010", "Site": "WTC", "Review Category": "Plate review", "Status": "Approved", "Review Time (min)": 3, "Created": today - timedelta(days=3), "Priority": "Normal"},
-    {"Trip ID": "DEMO-1011", "Site": "WAFI MALL", "Review Category": "Validation attempt", "Status": "Pending", "Review Time (min)": 11, "Created": today - timedelta(days=4), "Priority": "Medium"},
-    {"Trip ID": "DEMO-1012", "Site": "GLOBAL VILLAGE", "Review Category": "Non-UAE plate", "Status": "Approved", "Review Time (min)": 6, "Created": today - timedelta(days=4), "Priority": "Normal"},
+    {"Trip ID": "DEMO-1008", "Site": "WTC", "Review Category": "Wrong plate", "Status": "Pending", "Review Time (min)": 1, "Created": today - timedelta(days=2), "Priority": "High"},
+    {"Trip ID": "DEMO-1009", "Site": "JVC", "Review Category": "Large amount", "Status": "Flagged", "Review Time (min)": 2, "Created": today - timedelta(days=3), "Priority": "High"},
+    {"Trip ID": "DEMO-1010", "Site": "WTC", "Review Category": "Plate review", "Status": "Approved", "Review Time (min)": 2, "Created": today - timedelta(days=3), "Priority": "Normal"},
+    {"Trip ID": "DEMO-1011", "Site": "WAFI MALL", "Review Category": "Validation attempt", "Status": "Pending", "Review Time (min)": 1, "Created": today - timedelta(days=4), "Priority": "Medium"},
+    {"Trip ID": "DEMO-1012", "Site": "GLOBAL VILLAGE", "Review Category": "Non-UAE plate", "Status": "Approved", "Review Time (min)": 2, "Created": today - timedelta(days=4), "Priority": "Normal"},
 ]
 df = pd.DataFrame(demo_data)
 
